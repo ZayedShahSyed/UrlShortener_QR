@@ -3,9 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>URL Shortener - Shortify</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="shortener_styles.css">
 </head>
 <body>
-    <h1>URL Shortener</h1>
+    <div class="page-shell">
+        <header>
+            <a class="brand" href="index.html">Shortify</a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a class="nav-link--active" href="shortener.html">URL Shortener</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <section class="shortener-section">
+            <div class="section-header">
+                <h1>URL Shortener</h1>
+                <p class="section-description">Paste any long URL below to get a clean, shareable short link. Your shortened URLs are saved and you can generate QR codes instantly.</p>
+            </div>
+
+            <div class="shortener-div">
+            <input type="text" name="url_input" id="url_input" placeholder="Enter URL to shorten">
+            <button id="shorten_btn">Shorten URL</button>
+            <div id="result"></div>
+        </div>
+        <div class="display">
+            <div class="display-urls">
+                <div class="table-header">
+                    <h2>Your Shortened URLs</h2>
+                </div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Original URL</th>
+                            <th>Shortened URL</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="url_table_body">
+                    </tbody>
+                </table>
+                <div class="empty-state" id="empty_state" style="display: none; text-align: center; padding: 40px; color: var(--color-muted);">
+                    <p>No shortened URLs yet. Create your first one above!</p>
+                </div>
+            </div>
+            <div class="qr-code-display">
+                <h2>QR Code Preview</h2>
+                <div id="qr_code_result" class="qr-placeholder">
+                    <p>Select a URL to view its QR code</p>
+                </div>
+            </div>
+        </div>
+        </section>
+    </div>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
